@@ -1,3 +1,4 @@
+#Maura Diaz 21.691.778-2 S14
 import matplotlib.pyplot as plt
 
 def leer_archivo(nombre_archivo: str) -> tuple:
