@@ -30,11 +30,6 @@ def calcular_total(aranceles_iq: list, aranceles_sa: list, aranceles_co: list) -
     total = [iq + sa + co for iq, sa, co in zip(aranceles_iq, aranceles_sa, aranceles_co)]
     return total
 
-def imprimir_aranceles(meses: list, aranceles_iq: list, aranceles_sa: list, aranceles_co: list):
-    print("Aranceles calculados por puerto:")
-    for mes, iq, sa, co in zip(meses, aranceles_iq, aranceles_sa, aranceles_co):
-        print(f"{mes}: Iquique: {iq:.2f}, San Antonio: {sa:.2f}, Coronel: {co:.2f}")
-
 def graficar(meses: list, aranceles_iq: list, aranceles_sa: list, aranceles_co: list, total: list):
     plt.plot(meses, aranceles_iq, marker='o', label='Iquique')
     plt.plot(meses, aranceles_sa, marker='s', label='San Antonio')
@@ -56,7 +51,6 @@ def iniciar():
     arancel_sa = calcular_arancel(san_antonio, 0.0028) 
     arancel_co = calcular_arancel(coronel, 0.0039)  
     total = calcular_total(arancel_iq, arancel_sa, arancel_co)
-    imprimir_aranceles(meses, arancel_iq, arancel_sa, arancel_co)
     graficar(meses, arancel_iq, arancel_sa, arancel_co, total)
 
 iniciar()
